@@ -10,9 +10,10 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jacob Bowman
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import m1r_patterns_for_sequences as m1
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -106,6 +107,11 @@ def shortest_string(strings):
     # TODO: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    a = []
+    for k in range(len(strings)):
+        b = strings[k]
+        a = a + [len(b)]
+    print(m1.max_min(a))
 
 
 def run_test_index_of_largest_number():
@@ -183,7 +189,8 @@ def index_of_largest_number(numbers, n):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
-
+    for k in range(n):
+            a = 0
 
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through the sequence accessing TWO
@@ -235,9 +242,16 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    c = 0
+    for k in range(len(s) - 1):
+        a = s[k]
+        b = s[k+1]
+        if a == b:
+            c = c + 1
+    return c
 
 
 def run_test_is_palindrome():
@@ -308,7 +322,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -317,6 +331,13 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+    a = str()
+    for k in range(len(s)):
+        a = a + str(s[len(s)-1-k])
+    if a == s:
+        return True
+    else:
+        return False
 
 
 # ----------------------------------------------------------------------
@@ -375,9 +396,16 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    c = 0
+    for k in range(len(sequence1)):
+        a = sequence1[k]
+        b = sequence2[k]
+        if a == b:
+            c = c + 1
+    return c
 
 
 # ----------------------------------------------------------------------
